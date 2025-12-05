@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. B. Bhanu Sankar | Professional Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #2c3e50;
+            --secondary: #3498db;
+            --accent: #9b59b6;
+            --light: #ecf0f1;
+            --dark: #1a252f;
+            --gray: #7f8c8d;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background-color: #f9f9f9;
+            overflow-x: hidden;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .logo span {
+            color: var(--secondary);
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 30px;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: var(--primary);
+            font-weight: 500;
+            transition: var(--transition);
+            position: relative;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary);
+        }
+        
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 2px;
+            background: var(--secondary);
+            left: 0;
+            bottom: -5px;
+            transition: var(--transition);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
+        
+        .mobile-menu {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--primary);
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding: 150px 0 100px;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            margin-top: 70px;
+        }
+        
+        .hero-content {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .hero-text {
+            flex: 1;
+            min-width: 300px;
+            padding-right: 30px;
+        }
+        
+        .hero-image {
+            flex: 1;
+            min-width: 300px;
+            text-align: center;
+        }
+        
+        .profile-img {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid white;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .profile-img:hover {
+            transform: scale(1.05);
+        }
+        
+        .hero-text h1 {
+            font-size: 2.8rem;
+            margin-bottom: 10px;
+            color: var(--primary);
+        }
+        
+        .title {
+            font-size: 1.5rem;
+            color: var(--secondary);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .subtitle {
+            font-size: 1.2rem;
+            color: var(--accent);
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+        
+        .hero-text p {
+            color: var(--gray);
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn:hover {
+            background-color: var(--primary);
+            transform: translateY(-3px);
+            box-shadow: var(--shadow);
+        }
+        
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        
+        .section-title h2 {
+            font-size: 2.5rem;
+            display: inline-block;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title h2::after {
+            content: '';
+            position: absolute;
+            width: 70px;
+            height: 3px;
+            background-color: var(--secondary);
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 40px;
+        }
+        
+        .about-item {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .about-item:hover {
+            transform: translateY(-10px);
+        }
+        
+        .about-item h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--secondary);
+        }
+        
+        .details-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 15px;
+        }
+        
+        .detail-item {
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .detail-item i {
+            color: var(--secondary);
+            margin-right: 15px;
+            margin-top: 5px;
+        }
+        
+        /* Qualifications & Experience */
+        .qualifications-table {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            box-shadow: var(--shadow);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+        
+        .qualifications-table th, .qualifications-table td {
+            padding: 15px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .qualifications-table th {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .qualifications-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .qualifications-table tr:hover {
+            background-color: #f5f5f5;
+        }
+        
+        /* Experience Timeline */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--secondary);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            position: relative;
+        }
+        
+        .timeline-item:nth-child(odd)::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            right: -10px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            z-index: 1;
+            top: 20px;
+        }
+        
+        .timeline-item:nth-child(even)::before {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            left: -10px;
+            background-color: white;
+            border: 4px solid var(--secondary);
+            border-radius: 50%;
+            z-index: 1;
+            top: 20px;
+        }
+        
+        /* Publications */
+        .publications-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 20px;
+        }
+        
+        .publication-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            border-left: 4px solid var(--accent);
+            transition: var(--transition);
+        }
+        
+        .publication-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        /* Skills & Interests */
+        .skills-container, .interests-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .skill-item, .interest-item {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+        
+        .skill-item:hover, .interest-item:hover {
+            background-color: var(--secondary);
+            color: white;
+            transform: translateY(-5px);
+        }
+        
+        .skill-item:hover h4, .interest-item:hover h4 {
+            color: white;
+        }
+        
+        .skill-item h4, .interest-item h4 {
+            margin-bottom: 10px;
+            color: var(--secondary);
+        }
+        
+        /* Contact */
+        .contact-info {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .contact-icon {
+            width: 50px;
+            height: 50px;
+            background-color: var(--secondary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
+            margin-right: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark);
+            color: white;
+            padding: 40px 0 20px;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            margin-bottom: 30px;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 250px;
+            text-align: left;
+        }
+        
+        .footer-links {
+            flex: 1;
+            min-width: 250px;
+        }
+        
+        .footer-links h3 {
+            color: white;
+            margin-bottom: 20px;
+        }
+        
+        .footer-links ul {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            padding-left: 5px;
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin: 0 10px;
+            color: white;
+            transition: var(--transition);
+        }
+        
+        .social-links a:hover {
+            background-color: var(--secondary);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            margin-top: 30px;
+            padding-top: 20px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 0.9rem;
+            color: #aaa;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item:nth-child(odd)::before, .timeline-item:nth-child(even)::before {
+                left: 21px;
+                right: auto;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .navbar {
+                padding: 15px 0;
+            }
+            
+            .nav-links {
+                position: fixed;
+                background: white;
+                width: 100%;
+                top: 70px;
+                left: 0;
+                flex-direction: column;
+                align-items: center;
+                padding: 20px 0;
+                box-shadow: var(--shadow);
+                transform: translateY(-100%);
+                opacity: 0;
+                transition: var(--transition);
+                z-index: 999;
+            }
+            
+            .nav-links.active {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            
+            .nav-links li {
+                margin: 15px 0;
+            }
+            
+            .mobile-menu {
+                display: block;
+            }
+            
+            .hero {
+                padding: 120px 0 60px;
+            }
+            
+            .hero-text, .hero-image {
+                padding: 0;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            
+            .section-title h2 {
+                font-size: 2rem;
+            }
+            
+            .profile-img {
+                width: 250px;
+                height: 250px;
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .title {
+                font-size: 1.2rem;
+            }
+            
+            section {
+                padding: 60px 0;
+            }
+            
+            .qualifications-table {
+                font-size: 0.9rem;
+            }
+            
+            .qualifications-table th, .qualifications-table td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">Dr. Bhanu <span>Sankar</span></div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#qualifications">Qualifications</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#publications">Publications</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+                <div class="mobile-menu">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <h1>Dr. Bitra Bhanu Sankar</h1>
+                    <div class="title">Assistant Professor | Psychologist | Research Consultant</div>
+                    <div class="subtitle">Ph.D. in Education | PGDGC (Guidance & Counselling)</div>
+                    <p>To leverage my combined expertise as an Assistant Professor, Psychologist, and Research Consultant to enhance teaching–learning processes, support student mental well-being, and lead impactful research initiatives.</p>
+                    <a href="#contact" class="btn">Get In Touch</a>
+                </div>
+                <div class="hero-image">
+                    <img src="https://i.ibb.co/9mbX4q85/IMG-20250119-084134.jpg" alt="Dr. B. Bhanu Sankar" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>About Me</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-item">
+                    <h3>Personal Details</h3>
+                    <div class="details-grid">
+                        <div class="detail-item">
+                            <i class="fas fa-user"></i>
+                            <div>
+                                <strong>Name:</strong> Dr. Bitra Bhanu Sankar
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <strong>Email:</strong> dr.bhanusankar@gmail.com
+                            </div>
+                        </div>
+                        <div class="detail-item">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <strong>Phone:</strong> +91 79818 08379
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="about-item">
+                    <h3>Career Objective</h3>
+                    <p>To leverage my combined expertise as an Assistant Professor, Psychologist, and Research Consultant to enhance teaching–learning processes, support student mental well-being, and lead impactful research initiatives that promote academic excellence and innovation.</p>
+                </div>
+                
+                <div class="about-item">
+                    <h3>Achievements & Awards</h3>
+                    <ul style="padding-left: 20px;">
+                        <li>Best Researcher 2025</li>
+                        <li>Dr. APJ Abdul Kalam National Award 2025</li>
+                        <li>NSS Volunteer</li>
+                        <li>Basic Scout Master Training & long-term participation in Scouts & Guides</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Qualifications Section -->
+    <section id="qualifications" class="qualifications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Academic Qualifications</h2>
+            </div>
+            <div style="overflow-x: auto;">
+                <table class="qualifications-table">
+                    <thead>
+                        <tr>
+                            <th>Degree</th>
+                            <th>Institution</th>
+                            <th>Year</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Ph.D. in Education</td>
+                            <td>Acharya Nagarjuna University</td>
+                            <td>2024</td>
+                            <td>—</td>
+                        </tr>
+                        <tr>
+                            <td>PGDGC (Guidance & Counselling)</td>
+                            <td>Acharya Nagarjuna University</td>
+                            <td>2025</td>
+                            <td>69%</td>
+                        </tr>
+                        <tr>
+                            <td>M.Ed.</td>
+                            <td>Acharya Nagarjuna University</td>
+                            <td>2015</td>
+                            <td>80%</td>
+                        </tr>
+                        <tr>
+                            <td>M.A. in English</td>
+                            <td>Acharya Nagarjuna University</td>
+                            <td>2014</td>
+                            <td>57%</td>
+                        </tr>
+                        <tr>
+                            <td>M.Sc. in Electronics</td>
+                            <td>BEC, Bapatla</td>
+                            <td>2011</td>
+                            <td>72%</td>
+                        </tr>
+                        <tr>
+                            <td>B.Sc. (Computer Science)</td>
+                            <td>SVRM College, Nagaram</td>
+                            <td>2009</td>
+                            <td>68%</td>
+                        </tr>
+                        <tr>
+                            <td>Intermediate (MPC)</td>
+                            <td>MRR & AVS Jr. College</td>
+                            <td>2006</td>
+                            <td>65%</td>
+                        </tr>
+                        <tr>
+                            <td>SSC</td>
+                            <td>TMR High School</td>
+                            <td>2004</td>
+                            <td>62%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <div class="section-title">
+                <h2>Professional Experience</h2>
+            </div>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Assistant Professor – English</h3>
+                        <h4>KSK B.Ed College, Bhattiprolu (2015–Present)</h4>
+                        <ul>
+                            <li>Teaching Pedagogy of English, ELT, and communication skills</li>
+                            <li>Integrating psychological understanding into classroom instruction</li>
+                            <li>Designing curriculum, lesson planning, and assessment tools</li>
+                            <li>Conducting seminars, workshops, and professional training programs</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Assistant Professor – Electronics</h3>
+                        <h4>SVRM College, Nagaram (2016–2021)</h4>
+                        <ul>
+                            <li>Taught undergraduate Electronics courses</li>
+                            <li>Guided technical projects and promoted ICT-integrated learning</li>
+                            <li>Supported interdisciplinary approaches across Electronics and Education</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Research Consultancy – JournIQ</h3>
+                        <h4>Founder – Research Consultant</h4>
+                        <ul>
+                            <li>Guided 20 Ph.D. scholars in thesis development and publication quality enhancement</li>
+                            <li>Supervised 100 PG students in dissertations and academic research projects</li>
+                            <li>Supported 200+ research publications and academic books produced by scholars and faculty</li>
+                            <li>Expertise in academic writing, data analysis, and research methodology</li>
+                            <li>Provides plagiarism reduction, proofreading, and publication guidance</li>
+                            <li>Supports qualitative & quantitative statistical analysis</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Publications Section -->
+    <section id="publications" class="publications">
+        <div class="container">
+            <div class="section-title">
+                <h2>Research Publications (20+)</h2>
+            </div>
+            <div class="publications-list">
+                <div class="publication-item">
+                    <h4>ICT Awareness and Attitude Towards ICT of Undergraduate Students – A Relational Study</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>A Study on Attitude Towards ICT of Undergraduate Students</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Gender Narratives in Local Folklore and Oral Traditions of Guntur: A Feminist Interpretation</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Mental Health Status of 9th Class Secondary School Students in Guntur District</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Digital Literacy and Learning Readiness Among Rural B.Ed Trainees</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Classroom Environment Influence on Academic Motivation</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Learning Styles of Undergraduate Students in Andhra Pradesh</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Teacher Effectiveness and Communication Competence</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Academic Stress and Self-Esteem Among Adolescents</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Impact of Blended Learning on English Proficiency</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Emotional Intelligence and Behaviour Management in Classrooms</h4>
+                </div>
+                <div class="publication-item">
+                    <h4>Digital Pedagogy Adoption Among College Faculty</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills & Interests Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="section-title">
+                <h2>Skills & Areas of Interest</h2>
+            </div>
+            
+            <h3 style="margin-bottom: 20px; color: var(--secondary);">Skills</h3>
+            <div class="skills-container">
+                <div class="skill-item">
+                    <h4>Academic Research & Scholarly Writing</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>Educational Psychology & Counselling</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>English Language Teaching (ELT)</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>Electronics & ICT-Based Pedagogy</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>Instructional Design & Curriculum Development</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>Student Mentoring & Mental Health Awareness</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>Workshop & Seminar Facilitation</h4>
+                </div>
+                <div class="skill-item">
+                    <h4>Quantitative & Qualitative Research Methods</h4>
+                </div>
+            </div>
+            
+            <h3 style="margin: 40px 0 20px; color: var(--secondary);">Areas of Interest</h3>
+            <div class="interests-container">
+                <div class="interest-item">
+                    <h4>Educational Technology & ICT Integration</h4>
+                </div>
+                <div class="interest-item">
+                    <h4>English Language Teaching (ELT) & Applied Linguistics</h4>
+                </div>
+                <div class="interest-item">
+                    <h4>Psychology of Learning & Student Mental Health</h4>
+                </div>
+                <div class="interest-item">
+                    <h4>Educational & Cognitive Psychology</h4>
+                </div>
+                <div class="interest-item">
+                    <h4>Electronics Education & Technical Pedagogy</h4>
+                </div>
+                <div class="interest-item">
+                    <h4>Feminist Studies, Folklore & Cultural Narratives</h4>
+                </div>
+                <div class="interest-item">
+                    <h4>Qualitative & Quantitative Research Methodology</h4>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-title">
+                <h2>Contact Me</h2>
+            </div>
+            <div class="contact-info">
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                    </div>
+                    <div>
+                        <h3>Email</h3>
+                        <p>dr.bhanusankar@gmail.com</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-phone"></i>
+                    </div>
+                    <div>
+                        <h3>Phone</h3>
+                        <p>+91 79818 08379</p>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <div>
+                        <h3>Location</h3>
+                        <p>Andhra Pradesh, India</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <h2>Dr. Bhanu <span>Sankar</span></h2>
+                    <p>Assistant Professor | Psychologist | Research Consultant</p>
+                    <p>Dedicated to enhancing teaching-learning processes, supporting student mental well-being, and leading impactful research initiatives.</p>
+                </div>
+                <div class="footer-links">
+                    <h3>Quick Links</h3>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">About</a></li>
+                        <li><a href="#qualifications">Qualifications</a></li>
+                        <li><a href="#experience">Experience</a></li>
+                        <li><a href="#publications">Publications</a></li>
+                        <li><a href="#skills">Skills</a></li>
+                        <li><a href="#contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="social-links">
+                <a href="mailto:dr.bhanusankar@gmail.com"><i class="fas fa-envelope"></i></a>
+                <a href="tel:+917981808379"><i class="fas fa-phone"></i></a>
+                <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="#"><i class="fab fa-researchgate"></i></a>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 Dr. B. Bhanu Sankar. All Rights Reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const navLinks = document.querySelector('.nav-links');
+        
+        mobileMenu.addEventListener('click', () => {
+            navLinks.classList.toggle('active');
+            mobileMenu.querySelector('i').classList.toggle('fa-bars');
+            mobileMenu.querySelector('i').classList.toggle('fa-times');
+        });
+        
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('.nav-links a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('active');
+                mobileMenu.querySelector('i').classList.add('fa-bars');
+                mobileMenu.querySelector('i').classList.remove('fa-times');
+            });
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 70,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+        
+        // Add active class to nav links based on scroll position
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('.nav-links a');
+            
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                if(pageYOffset >= (sectionTop - 100)) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if(link.getAttribute('href').substring(1) === current) {
+                    link.classList.add('active');
+                }
+            });
+        });
+        
+        // Fallback for profile image if link doesn't work
+        document.querySelector('.profile-img').addEventListener('error', function() {
+            this.src = 'https://images.unsplash.com/photo-1560250097-0b93528c311a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=687&q=80';
+        });
+    </script>
+</body>
+</html>
